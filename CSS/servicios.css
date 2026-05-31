@@ -1,0 +1,281 @@
+/* =========================
+   SERVICIOS
+========================= */
+
+.servicios-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f5f5f5;
+  overflow-x: hidden;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.servicios-hero {
+  min-height: 38vh;
+  padding: 150px 6vw 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #f5f5f5;
+}
+
+.servicios-hero h1 {
+  max-width: 700px;
+  font-size: clamp(42px, 7vw, 42px);
+  line-height: 0.9;
+  margin-bottom: 16px;
+}
+
+.servicios-hero p {
+  max-width: 600px;
+  font-family: "Acumin Pro Regular", Arial, sans-serif;
+  font-size: clamp(16px, 2.6vw, 20px);
+  line-height: 1.15;
+}
+
+/* =========================
+   SLIDER
+========================= */
+
+.servicios-slider-section {
+  width: 100%;
+  min-height: 62vh;
+  background: #f5f5f5;
+  padding: 36px 0 54px;
+  overflow: hidden;
+}
+
+.swipe-hint {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  margin: 0 8px 14px;
+  font-family: "Acumin Pro Regular", Arial, sans-serif;
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.swipe-hint .arrow {
+  display: inline-block;
+}
+
+.servicios-hint {
+  padding: 0 6vw;
+  margin-bottom: 14px;
+}
+
+.servicios-track {
+  display: flex;
+  gap: 28px;
+  padding: 0 6vw 20px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  cursor: grab;
+  user-select: none;
+}
+
+.servicios-track:active {
+  cursor: grabbing;
+}
+
+.servicios-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* =========================
+   TARJETAS
+========================= */
+
+.servicio-slide {
+  flex: 0 0 430px;
+  height: min(560px, 58vh);
+  background: #ffffff;
+  border-radius: 34px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  scroll-snap-align: start;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.servicio-slide:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.14);
+}
+
+/* TARJETA ANCHA */
+
+.servicio-slide-wide {
+  flex: 0 0 720px;
+  background: #ffffff;
+}
+
+/* TARJETAS ESTRECHAS CON EFECTO HOME */
+
+.servicio-card-effect {
+  position: relative;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.servicio-card-effect::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.18);
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.servicio-card-effect:hover::after {
+  opacity: 1;
+}
+
+.servicio-card-effect:hover .servicio-img img {
+  transform: scale(1.08);
+  filter: brightness(0.92);
+}
+
+.card-pink {
+  background: linear-gradient(
+    135deg,
+    rgba(242, 152, 192, 0.95),
+    rgba(242, 152, 192, 0.18)
+  );
+}
+
+.card-yellow {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 153, 1),
+    rgba(255, 255, 153, 0.18)
+  );
+}
+
+.card-orange {
+  background: linear-gradient(
+    135deg,
+    rgba(236, 99, 56, 0.95),
+    rgba(236, 99, 56, 0.18)
+  );
+}
+
+/* =========================
+   IMÁGENES
+========================= */
+
+.servicio-img {
+  width: 100%;
+  height: 66%;
+  overflow: hidden;
+  border: none;
+}
+
+.servicio-img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border: none;
+  transition: transform 0.55s ease, filter 0.55s ease;
+}
+
+/* =========================
+   TEXTO
+========================= */
+
+.servicio-content {
+  height: 34%;
+  padding: 0 24px 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 18px;
+  position: relative;
+  z-index: 2;
+}
+
+.servicio-content h2 {
+  font-size: clamp(28px, 3vw, 36px);
+  line-height: 0.9;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.servicio-content p {
+  font-family: "Acumin Pro Regular", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.15;
+  max-width: 92%;
+  margin: 0;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
+  .servicios-hero {
+    min-height: 34vh;
+    padding: 120px 24px 40px;
+  }
+
+  .servicios-hero h1 {
+    font-size: 26px;
+    line-height: 1.1;
+  }
+
+  .servicios-hero p {
+    font-size: 20px;
+    line-height: 1.15;
+  }
+
+  .servicios-slider-section {
+    padding: 24px 0 40px;
+  }
+
+  .servicios-hint {
+    padding: 0 24px;
+  }
+
+  .servicios-track {
+    gap: 18px;
+    padding: 0 24px 16px;
+  }
+
+  .servicio-slide,
+  .servicio-slide-wide {
+    flex: 0 0 82vw;
+    height: 520px;
+    border-radius: 28px;
+  }
+
+  .servicio-content {
+    padding: 20px;
+  }
+
+  .servicio-content h2 {
+    font-size: 38px;
+  }
+
+  .servicio-content p {
+    font-size: 15px;
+  }
+}

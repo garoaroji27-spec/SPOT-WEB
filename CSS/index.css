@@ -1,0 +1,333 @@
+/* =========================
+   ESTRUCTURA HERO FULLSCREEN
+========================= */
+.hero-fullscreen {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /* Asegúrate de tener la fotoHome.jpg en la carpeta IMG */
+  background: url('../IMG/foto-entrada.jpeg') no-repeat center center/cover;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Oscurecemos un poco la imagen de fondo para que resalten las tarjetas y el texto */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%);
+  z-index: 1;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 0 5vw 40px 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+/* =========================
+   TEXTO (ALINEADO IZQUIERDA)
+========================= */
+.hero-content {
+  text-align: left;
+  max-width: 520px;
+  margin-bottom: 60px;
+  color: #ffffff;
+}
+
+.hero-content h1 {
+  font-size: clamp(32px, 4.5vw, 42px);
+  color: #ffffff;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.hero-content p {
+  font-family: "Acumin Pro Regular", Arial, sans-serif;
+  font-size: clamp(16px, 1.2vw, 20px);
+  line-height: 1.4;
+  margin-bottom: 30px;
+  opacity: 0.95;
+  max-width: 60%;
+}
+
+/* =========================
+   TARJETAS (GRADIENT GLASSMORPHISM)
+========================= */
+.benefits-cards {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+}
+
+.card {
+  flex: 1;
+  padding: 30px;
+  border-radius: 25px;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  /* BASE DEL EFECTO CRISTAL */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Se ilumina el borde al pasar el ratón */
+}
+
+/* Textos dentro de las tarjetas de cristal (en blanco para máximo contraste y elegancia) */
+.card h2 {
+  letter-spacing: 1px;
+  font-size: clamp(16px, 1.5vw, 22px);
+  margin-bottom: 12px;
+  color: #ffffff;
+  line-height: 1.1;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.card p {
+  font-family: "Acumin Pro Regular", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+/* GRADIENTES TRANSLÚCIDOS DE TUS COLORES CORPORATIVOS */
+.card-yellow { 
+  background: linear-gradient(135deg, rgba(255, 255, 153, 0.772), rgba(255, 255, 153, 0)); 
+}
+
+.card-pink { 
+  background: linear-gradient(135deg, rgb(242, 152, 192), rgba(242, 152, 192, 0)); 
+}
+
+.card-orange { 
+  background: linear-gradient(135deg, rgb(236, 98, 56), rgba(236, 98, 56, 0)); 
+}
+/* BOTÓN HERO SOLO AMARILLO */
+.hero-content .btn {
+  background: var(--amarillo);
+  box-shadow: 0 10px 25px rgba(255, 255, 153, 0.35);
+}
+
+.hero-content .btn:hover {
+  box-shadow: 0 15px 30px rgba(255, 255, 153, 0.45);
+}/* =========================
+   HOME / MÓVIL IPHONE 14 PRO MAX
+========================= */
+
+@media (max-width: 1024px) {
+
+  .hero-fullscreen {
+    min-height: 100svh;
+    height: auto;
+    background-position: center center;
+    align-items: flex-end;
+  }
+
+  .hero-container {
+    min-height: 100svh;
+    height: auto;
+    padding: 112px 16px 26px;
+    justify-content: flex-end;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 26px;
+    padding: 0;
+  }
+
+  .hero-content h1 {
+    max-width: 92%;
+    font-size: 31px;
+    line-height: 0.9;
+    margin-bottom: 16px;
+    color: #ffffff;
+  }
+
+  .hero-content p {
+    max-width: 88%;
+    font-size: 15.5px;
+    line-height: 1.28;
+    margin-bottom: 22px;
+    color: #ffffff;
+  }
+
+  .hero-content .btn {
+    height: 46px;
+    min-width: 155px;
+    padding: 0 22px;
+    font-size: 13px;
+  }
+
+  .benefits-cards {
+    width: calc(100% + 16px);
+    gap: 16px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    padding-right: 16px;
+    padding-bottom: 4px;
+  }
+
+  .benefits-cards::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card {
+    flex: 0 0 82vw;
+    max-width: 350px;
+    min-height: 155px;
+    padding: 22px;
+    border-radius: 28px;
+    scroll-snap-align: start;
+  }
+
+  .card h2 {
+    font-size: 25px;
+    line-height: 0.95;
+    margin-bottom: 10px;
+  }
+
+  .card p {
+    font-size: 14px;
+    line-height: 1.25;
+  }
+}
+
+
+/* =========================
+   AJUSTE EXTRA PARA PANTALLAS MUY ESTRECHAS
+========================= */
+
+@media (max-width: 390px) {
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero-content p {
+    font-size: 14.5px;
+  }
+
+  .card {
+    flex-basis: 84vw;
+    min-height: 145px;
+  }
+
+  .card h2 {
+    font-size: 23px;
+  }
+}
+/* =========================
+   FIX HEADER HOME MÓVIL
+   Igual que Sobre Spot
+========================= */
+
+@media (max-width: 1024px) {
+
+  .mobile-header {
+    position: fixed;
+
+    transform: translateX(-50%) !important;
+
+    width: calc(100% - 24px) !important;
+    max-width: 430px !important;
+
+    height: 62px !important;
+    padding: 0 20px !important;
+
+    border-radius: 50px !important;
+    box-sizing: border-box !important;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 5000;
+
+  }
+
+  .header-logo img {
+    width: 78px !important;
+    height: auto !important;
+  }
+
+  .menu-toggle {
+    width: 32px !important;
+    height: 24px !important;
+    flex-shrink: 0 !important;
+  }
+  
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100vw;
+    height: 100dvh;
+
+    background: #ffffff;
+    z-index: 4500;
+
+    padding-top: 130px;
+    padding-left: 28px;
+    padding-right: 28px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+
+    transform: translateY(-100%);
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .mobile-menu.is-open {
+    transform: translateY(0);
+  }
+
+  .mobile-menu a {
+    width: fit-content;
+    color: var(--text);
+    text-decoration: none;
+    font-family: "Acumin Pro Regular", Arial, sans-serif;
+    font-size: 22px;
+    padding: 12px 24px;
+    border-radius: 50px;
+  }
+
+  .mobile-menu a.active {
+    background: var(--amarillo);
+    font-family: "Acumin Pro", Arial, sans-serif;
+  }
+
+  .menu-overlay {
+    display: none;
+  }
+}
