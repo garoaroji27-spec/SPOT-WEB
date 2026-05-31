@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spot | Contacto</title>
+
+  <link rel="stylesheet" href="CSS/global.css" />
+  <link rel="stylesheet" href="CSS/reserva.css" />
+</head>
+
+<body>
+
+  <header class="mobile-header">
+    <a href="index.html" class="header-logo">
+      <img src="IMG/logo-png.png" alt="Spot" />
+    </a>
+
+    <button class="menu-toggle" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <nav class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="sobre-spot.html">Sobre Spot</a>
+    <a href="actividades.html">Actividades</a>
+    <a href="servicios.html">Servicios</a>
+    <a class="active" href="reserva.html">Contacto</a>
+  </nav>
+
+  <div class="menu-overlay"></div>
+
+  <header class="desktop-header">
+    <div class="desktop-nav-bar">
+      <a href="index.html" class="desktop-logo">
+        <img src="IMG/logo-png.png" alt="Spot" />
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="index.html">Home</a>
+        <a href="sobre-spot.html">Sobre Spot</a>
+        <a href="actividades.html">Actividades</a>
+        <a href="servicios.html">Servicios</a>
+        <a class="active" href="reserva.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="reserva-page">
+
+    <section class="reserva-hero">
+
+      <div class="reserva-intro">
+        <h1>Reserva tu visita</h1>
+        <p>
+          Cuéntanos qué necesitas y te escribiremos para acompañarte en tu primera visita a Spot.
+        </p>
+      </div>
+
+      <div class="reserva-card">
+
+        <div class="reserva-card-info">
+          <h2>Un primer paso para parar.</h2>
+          <p>
+            Déjanos tus datos y nos pondremos en contacto contigo para resolver dudas,
+            conocer tu caso y encontrar el mejor momento para visitar Spot.
+          </p>
+
+          <div class="reserva-mini-info">
+            <h3>Contacto</h3>
+             <br></br>
+  <p>spot@gmail.com</p>
+  <p>+34 684 392 385</p>
+  <p>
+  <a href="https://www.instagram.com/spot_para?igsh=MXZtbWFzZTVxeHA1dg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">
+    @spot_para
+  </a>
+</p>
+  <br></br>
+  <h3>Ubicación</h3>
+   <br></br>
+  <p>Calle Madrid 11, Vitoria-Gasteiz</p>
+</div>
+        </div>
+
+        <form class="reserva-form">
+
+          <div class="form-row">
+            <label>
+              Nombre
+              <input type="text" name="nombre" placeholder="Tu nombre" required>
+            </label>
+
+            <label>
+              Email
+              <input type="email" name="email" placeholder="tu@email.com" required>
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>
+              Teléfono
+              <input type="tel" name="telefono" placeholder="+34 ...">
+            </label>
+</div>
+            
+
+          <div class="form-row">
+            <label>
+              Fecha
+              <input type="date" name="fecha">
+            </label>
+
+            <label>
+              Hora
+              <input type="time" name="hora">
+            </label>
+          </div>
+
+          <label>
+            Mensaje
+            <textarea name="mensaje" placeholder="Cuéntanos qué necesitas o cualquier duda que tengas..."></textarea>
+          </label>
+
+          <button class="btn reserva-btn" type="submit">
+            Enviar reserva
+          </button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+  
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
